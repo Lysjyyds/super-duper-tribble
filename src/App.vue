@@ -8,7 +8,7 @@
         :goods="item"
       ></MyGoods>
     </div>
-    <MyFooter></MyFooter>
+    <MyFooter :goodsList="goodsList"></MyFooter>
   </div>
 </template>
 
