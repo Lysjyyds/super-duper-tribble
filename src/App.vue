@@ -7,6 +7,7 @@
 </template>
 
 <script>
+import axios from 'axios'
 import MyHeader from './components/MyHeader'
 import MyGoods from './components/MyGoods'
 import MyFooter from './components/MyFooter'
@@ -15,6 +16,20 @@ export default {
     MyHeader,
     MyGoods,
     MyFooter
+  },
+  data () {
+    return {
+      goodsList: []
+    }
+  },
+  created () {
+    this.getGoods()
+  },
+  methods: {
+    async getGoods () {
+      const res = await axios({ url: '/api/cart' })
+      this.goodsList = res.data.list
+    }
   }
 }
 </script>
