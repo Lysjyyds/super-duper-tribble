@@ -1,7 +1,13 @@
 <template>
   <div>
     <MyHeader background="purple" title="我的购物车"></MyHeader>
-    <div class="main"><MyGoods></MyGoods></div>
+    <div class="main">
+      <MyGoods
+        v-for="item in goodsList"
+        :key="item.goods_id"
+        :goods="item"
+      ></MyGoods>
+    </div>
     <MyFooter></MyFooter>
   </div>
 </template>
